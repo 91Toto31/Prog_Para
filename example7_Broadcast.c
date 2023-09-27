@@ -20,10 +20,10 @@ int main(int argc, char *argv[])
 	size = 10;
 
 	MPI_Send(message, size, MPI_CHAR, 1, 0, MPI_COMM_WORLD);
-    	MPI_Recv(message, size, MPI_CHAR, 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 
 	MPI_Bcast(message, size, MPI_CHAR, 1, MPI_COMM_WORLD);
 
+	MPI_Recv(message, size, MPI_CHAR, 1, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
 	
 	printf("After Broadcast: I am the node %d and my message is %s\n", myid, message);
 
