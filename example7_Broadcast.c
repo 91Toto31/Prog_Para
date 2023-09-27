@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
 
 	printf("Before Broadcast: I am the node %d and my message is %s\n", myid, message);
 	size = 10;
-	MPI_Bcast(message, size, MPI_CHAR, 0, MPI_COMM_WORLD);
+	MPI_Bcast(message, size, MPI_CHAR, 1, MPI_COMM_WORLD);
 	printf("After Broadcast: I am the node %d and my message is %s\n", myid, message);
 
 	MPI_Finalize();
